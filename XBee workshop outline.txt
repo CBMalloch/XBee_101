@@ -1,0 +1,132 @@
+XBee seminar
+
+Notes from presentation 1 2011-06-23:
+	need to label the radios (MY)
+	new pictures, with suggested breadboard locations
+		pot all the way to right, powered from rails
+	templates for wiring *without* the Adafruit adapters plugged in
+	suggested wiring colors
+	need 3 hours
+	skip plain Arduino hello world
+	preprogram arduinos with hello world pot application
+	everybody use a different PAN ID
+		note about interference when programming
+	put all settings on one page
+	put wiring connections, pin-assignment picture, and wired picture on one page?
+		maybe wire for left edge plus wiring without adapter inserted
+		(yellow vertical wire where left edge of adapter goes, but wire not used otherwise)
+	notes about installation of TTL232 wire, XBee chip -- note orientations!
+	put the Arduino program(s) up on web site
+
+Logistics
+	v Date
+	v Room
+	v Bio to Baird
+	v Outline to Josh
+	v Soldering the XBee USB adapters
+
+References
+	http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-series1-module.jsp#overview
+	
+
+Intro
+	Example applications
+		serial communications
+		TAW - http://makezine.com/18/tweetawatt/
+	Zigbee / XBee
+	
+Activity 1: build a Hello World
+	plug Arduino into proto board, power with USB
+	start up Arduino code
+	program: Hello World
+		save, send, run, and monitor
+Activity 2: build a Hello World Pot
+	plug pot into Arduino
+	program: modify code to read pot and send to PC
+		save, send, run, and monitor
+Activity 3: build a Hello World Pot Radio
+	plug XBee into proto board and wire to Arduino
+	plug another XBee into USB cable
+	one team plug power supply into Arduino
+	note everybody can read
+	add teams plugging power into Arduino
+	note what happens regarding interference
+	
+XBee settings 101:
+	X-CTU
+	PAN, MY, destinations high and low, serial number, text ID, baud
+XBee settings 201:
+	collision avoidance
+	Hayes protocol
+
+Activity 4: listen to Pot Radio
+	everybody plug in their Arduinos
+	should work just fine
+
+IO Line Passing
+IO - digital
+	sampling
+	sleep
+		remarks about low-power operations
+		wake-on-pin
+		timer
+
+Activity 5: digital line passing
+	Using a switch on one XBee to control an LED on another
+
+IO - analog
+	ADC
+	PWM
+	
+Activity 6: analog line passing
+	Using a pot on one XBee to vary an LED on another
+
+Choosing hardware for your project
+	XBee vs. Pro
+	Series 2 and mesh networking
+	
+================================================================================================
+	
+Parts for each team:
+	2 XBee radios: XBee 1mW Chip Antenna (XB24-ACI-001): item code 32404  $19 ea
+			source: http://www.parallax.com/tabid/768/txtSearch/xbee/List/0/SortField/4/Default.aspx
+
+	2 XBee Adapter kits: $10 ea Adafruit product ID 126
+			source: http://www.adafruit.com/index.php?main_page=product_info&cPath=29&products_id=126
+			to be specially built
+					10-pin end connector parallel to board
+					populate 10- and 11-pin connectors beneath, too
+			
+	1 XBee USB adapter:  XBee USB Adapter Board: item code     32400  $19.99 ea
+			source: http://www.parallax.com/tabid/768/txtSearch/xbee/List/0/SortField/4/Default.aspx
+	1 USB A to USB-mini-B wire such as Tyco 1496476-3, available from Mouser and others
+			
+	1 Arduino - BBB or Stickduino on hand should be good, but let's check in on them
+	1 wall-wart power supply for Arduino
+	1 USB FTDI TTL-232 cable such as Mouser's 895-TTL-232R-5V
+			or FTDI friend such as http://www.makershed.com/ProductDetails.asp?ProductCode=MKAD22
+	2 proto boards
+	1 potentiometer, around 10K
+	4 LEDs
+	4 330R
+	prototyping wire
+	wire cutter / stripper
+	
+Software
+	X-CTU; consider updates for Arduino software; Processing
+	SoftwareSerial
+	
+Follow-on seminars
+	debugging -- with Mega, with another XBee
+	remote configuration?
+	mesh networking
+	directed conversation over XBee - configuration on the fly
+	low-power applications of the XBee
+	discussion / analysis of projects
+		Tweet-A-Watt
+		TAW Monitor
+	deciphering the XBee API packet
+		using arduino code
+		using Python
+	
+
